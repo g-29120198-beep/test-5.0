@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>SERQI - Sistem E-Rekod Quran Iqra</title>
+    
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="SERQI">
+    <link rel="apple-touch-icon" href="https://iili.io/f6tjSUB.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+            margin: 0;
+            padding-top: env(safe-area-inset-top);
+            -webkit-tap-highlight-color: transparent;
+        }
+        #serqi-loader {
+            position: fixed;
+            inset: 0;
+            background: #0f172a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+        .loader-logo {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 24px;
+            padding: 12px;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react/": "https://esm.sh/react@18.3.1/",
+    "react-dom": "https://esm.sh/react-dom@18.3.1",
+    "react-dom/": "https://esm.sh/react-dom@18.3.1/",
+    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+    "recharts": "https://esm.sh/recharts@2.12.7?external=react,react-dom",
+    "lucide-react": "https://esm.sh/lucide-react@0.454.0?external=react"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="serqi-loader">
+        <img src="https://iili.io/f6tjSUB.jpg" class="loader-logo" alt="Logo">
+        <div style="margin-top: 20px; color: white; font-size: 10px; font-weight: 900; letter-spacing: 3px; opacity: 0.5;">MEMULAKAN SISTEM...</div>
+    </div>
+    <div id="root"></div>
+
+    <!-- Fail-safe Script: Paksa buang loader jika React lambat mount -->
+    <script>
+        setTimeout(function() {
+            var loader = document.getElementById('serqi-loader');
+            if (loader && loader.style.visibility !== 'hidden') {
+                loader.style.opacity = '0';
+                setTimeout(function() { loader.style.visibility = 'hidden'; }, 500);
+            }
+        }, 3500);
+    </script>
+</body>
+</html>

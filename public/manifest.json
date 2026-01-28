@@ -1,0 +1,32 @@
+
+{
+  "short_name": "SERQI",
+  "name": "Sistem E-Rekod Al-Quran & Iqra",
+  "description": "Sistem Perekodan Tilawah SK Bukit Rambai",
+  "icons": [
+    {
+      "src": "https://iili.io/f6tjSUB.jpg",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://iili.io/f6tjSUB.jpg",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "https://iili.io/f6tjSUB.jpg",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "index.html",
+  "display": "standalone",
+  "theme_color": "#0f172a",
+  "background_color": "#f8fafc",
+  "orientation": "portrait",
+  "scope": "./"
+}
